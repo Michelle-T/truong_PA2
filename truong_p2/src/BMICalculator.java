@@ -8,7 +8,7 @@ import java.util.Scanner;
  * so the user can evaluate his/her BMI.
  */
 public class BMICalculator {
-
+	private double Bminumber;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		BMICalculator app = new BMICalculator();
@@ -19,7 +19,11 @@ public class BMICalculator {
 
 	public void readUserData()
 	{
-		//return 
+		System.out.println("Would you like to use the Metric "
+				+ "or Imperial unit? :");
+		String userString;
+		Scanner in = new Scanner(System.in);
+		userString = in.nextLine();
 	}
 	
 	private String readUnitType()
@@ -30,7 +34,7 @@ public class BMICalculator {
 	
 	private void readMeasurementData()
 	{
-		
+		//choose between metric or imperial
 	}
 	
 	private void readMetricData()
@@ -68,7 +72,7 @@ public class BMICalculator {
 		
 	}
 	
-	private void getHeight()
+	public void getHeight()
 	{
 		
 	}
@@ -78,14 +82,29 @@ public class BMICalculator {
 		
 	}
 	
-	public void getBmi()
+	public double getBmi(double Bminumber)
 	{
-		
+		return Bminumber;
 	}
 	
 	public void getBmiCategory()
 	{
-		
+		if (Bminumber < 18.5)
+		{
+			System.out.println("You are Underweight.");
+		}
+		else if (Bminumber >= 18.5 && Bminumber <= 24.9)
+		{
+			System.out.println("You are Normal Weight.");
+		}
+		else if (Bminumber >= 25 && Bminumber <= 29.9)
+		{
+			System.out.println("You are Overweight.");
+		}
+		else if (Bminumber > 30)
+		{
+			System.out.println("You are Obese.");
+		}
 	}
 	
 }
